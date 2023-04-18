@@ -146,7 +146,7 @@ A resposta será simplesmente um ID
 }
 ```
 
-###2. Método: create_invoices | Módulo: sale.advance.payment.inv
+### 2. Método: create_invoices | Módulo: sale.advance.payment.inv
 Cria uma fatura provisória
 O parâmetro enviado em args, será campo **result** recebido na requisição anterior
 
@@ -242,7 +242,7 @@ A resposta segue o padrão a seguir
 Será utilizado o valor encontrado em **res_id** na resposta da requisição anterior.
 Atente-se ao conteúdo em **context** na resposta anterior, ele será utilizado na próxima
 
-###3. Método: action_post | Módulo account.move
+### 3. Método: action_post | Módulo account.move
 Confirma a fatura criada
 ```
 {
