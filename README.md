@@ -9,7 +9,7 @@ Este repositório tem documentada a estrutura das requisições do Odoo14
   "params": {
     "args": [
       [
-        1565
+        NUMERO_DO_PEDIDO
       ]
     ],
     "kwargs": {
@@ -53,7 +53,7 @@ Um exemplo de resposta para esta requisição seria:
       "default_invoice_origin": "S01565",
       "default_user_id": 8
     },
-    "res_id": 115,
+    "res_id": ID_DA_FATURA,
     "res_model": "account.move",
     "target": "current",
     "view_mode": "list,kanban,form",
