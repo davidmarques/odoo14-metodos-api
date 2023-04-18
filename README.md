@@ -90,7 +90,8 @@ Um exemplo de resposta para esta requisição seria:
 
 ## Criar uma fatura
 Para a criação de uma fatura, são necessárias 3 requisições
-1. Método: create | Módulo: sale.advance.payment.inv
+###1. Método: create | Módulo: sale.advance.payment.inv
+Inicia o processo de criação da fatura
 ```
 {
   "jsonrpc": "2.0",
@@ -145,7 +146,8 @@ A resposta será simplesmente um ID
 }
 ```
 
-2. Método: create_invoices | Módulo: sale.advance.payment.inv
+###2. Método: create_invoices | Módulo: sale.advance.payment.inv
+Cria uma fatura provisória
 O parâmetro enviado em args, será campo **result** recebido na requisição anterior
 
 ```
@@ -237,8 +239,46 @@ A resposta segue o padrão a seguir
   }
 }
 ```
-Atente-se ao conteúdo **context** na resposta anterior, ele será utilizado na próxima
+Será utilizado o valor encontrado em **res_id** na resposta da requisição anterior.
+Atente-se ao conteúdo em **context** na resposta anterior, ele será utilizado na próxima
 
+###3. Método: action_post | Módulo account.move
+Confirma a fatura criada
 ```
-aqui
+{
+  "jsonrpc": "2.0",
+  "method": "call",
+  "params": {
+    "args": [
+      [
+        119
+      ]
+    ],
+    "kwargs": {
+      "context": {
+        "lang": "pt_BR",
+        "tz": "America/Sao_Paulo",
+        "uid": 2,
+        "allowed_company_ids": [
+          1
+        ],
+        "active_model": "sale.advance.payment.inv",
+        "open_invoices": true,
+        "active_id": 122,
+        "active_ids": [
+          122
+        ],
+        "default_move_type": "out_invoice",
+        "default_partner_id": 7370,
+        "default_partner_shipping_id": 7370,
+        "default_invoice_payment_term_id": 1,
+        "default_invoice_origin": "S01499",
+        "default_user_id": 8
+      }
+    },
+    "method": "action_post",
+    "model": "account.move"
+  },
+  "id": 34422302
+}
 ```
