@@ -90,7 +90,7 @@ Um exemplo de resposta para esta requisição seria:
 
 ## Criar uma fatura
 Para a criação de uma fatura, são necessárias 3 requisições
-###1. Método: create | Módulo: sale.advance.payment.inv
+### 1. Método: create | Módulo: sale.advance.payment.inv
 Inicia o processo de criação da fatura
 ```
 {
